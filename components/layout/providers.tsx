@@ -2,6 +2,9 @@
 import React from "react";
 import ThemeProvider from "./ThemeToggle/theme-provider";
 import { SessionProvider, SessionProviderProps } from "next-auth/react";
+import { Provider } from "react-redux";
+import { store, persistor } from "@/redux/store";
+import { PersistGate } from 'redux-persist/integration/react'
 export default function Providers({
   session,
   children,
@@ -11,9 +14,14 @@ export default function Providers({
 }) {
   return (
     <>
-      <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <SessionProvider session={session}>{children}</SessionProvider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+            <SessionProvider session={session}>{children}</SessionProvider>
+          </ThemeProvider>
+        </PersistGate>
+      </Provider>
     </>
   );
 }

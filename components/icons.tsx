@@ -29,6 +29,8 @@ import {
   User2Icon,
   UserX2Icon,
   X,
+  LucideStickyNote,
+  PlusCircle
 } from "lucide-react";
 
 export type Icon = LucideIcon;
@@ -60,6 +62,8 @@ export const Icons = {
   sun: SunMedium,
   moon: Moon,
   laptop: Laptop,
+  blogs: LucideStickyNote,
+  createBlog: PlusCircle,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

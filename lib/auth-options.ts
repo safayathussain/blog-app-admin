@@ -19,6 +19,7 @@ export const authOptions: NextAuthOptions = {
       async authorize(credentials, req) {
         const user = { id: "1", name: "John", email: credentials?.email };
         if (user) {
+          console.log(user)
           // Any object returned will be saved in `user` property of the JWT
           return user;
         } else {
