@@ -39,7 +39,7 @@ const ImgSchema = z.object({
   fileUrl: z.string(),
   url: z.string(),
 });
-export const IMG_MAX_LIMIT = 3;
+export const IMG_MAX_LIMIT = 1;
 const formSchema = z.object({
   name: z
     .string()

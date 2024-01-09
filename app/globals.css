@@ -85,3 +85,13 @@
     height: 100dvh;
   }
 }
+
+.Draftail-block--tiny-text {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+.Draftail-block--HEADER_THREE {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+

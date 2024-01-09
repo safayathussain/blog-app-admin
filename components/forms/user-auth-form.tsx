@@ -41,10 +41,10 @@ export default function UserAuthForm() {
   });
 
   const onSubmit = async (data: UserFormValue) => {
-    // signIn("credentials", {
-    //   email: data.email,
-    //   callbackUrl: callbackUrl ?? "/dashboard",
-    // });
+    signIn("credentials", {
+      email: data.email,
+      callbackUrl: callbackUrl ?? "/dashboard",
+    });
     console.log(data)
     dispatch(
       login(data)
