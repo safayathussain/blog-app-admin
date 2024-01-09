@@ -13,7 +13,7 @@ import { Button } from '../ui/button'
 import TextEditor from '../textEditor/TextEditor'
 import { MDXEditor, headingsPlugin } from '@mdxeditor/editor'
 
-const BlogForm = ({ initialData }) => {
+const BlogForm = ({ initialData = {} }) => {
     const params = useParams();
     const router = useRouter();
     const { toast } = useToast();
@@ -64,7 +64,7 @@ const BlogForm = ({ initialData }) => {
         resolver: zodResolver(formSchema),
         defaultValues,
     });
-    const onSubmit = async (data) => {
+    const onSubmit = async () => {
 
     };
     return (
@@ -93,7 +93,7 @@ const BlogForm = ({ initialData }) => {
                     />
                     <FormField
                         control={form.control}
-                        name="title"
+                        name="name"
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>Title</FormLabel>

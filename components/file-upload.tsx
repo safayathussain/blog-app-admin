@@ -1,5 +1,5 @@
 "use client";
-import { OurFileRouter } from "@/app/api/uploadthing/core";
+// import { OurFileRouter } from "@/app/api/uploadthing/core";
 import { UploadDropzone } from "@uploadthing/react";
 import { Trash } from "lucide-react";
 import Image from "next/image";
@@ -13,7 +13,11 @@ interface ImageUploadProps {
   onRemove: (value: UploadFileResponse[]) => void;
   value: UploadFileResponse[];
 }
-
+type OurFileRouter = {
+  _input: "unsetMarker" & { __brand: "unsetMarker" };
+  _metadata: { userId: string };
+  [key: string]: any; // Add index signature if required
+};
 export default function FileUpload({
   onChange,
   onRemove,
@@ -60,7 +64,7 @@ export default function FileUpload({
       </div>
       <div>
         {value.length < 1 && (
-          <UploadDropzone<OurFileRouter>
+          <UploadDropzone<OurFileRouter >
 
             className="dark:bg-zinc-800 py-2 ut-label:text-sm ut-allowed-content:ut-uploading:text-red-300"
             endpoint="imageUploader"
@@ -91,9 +95,8 @@ export default function FileUpload({
             onUploadBegin={() => {
               // Do something once upload begins
             }}
-          >
-
-          </UploadDropzone>
+          />
+          
         )}
       </div>
     </div>

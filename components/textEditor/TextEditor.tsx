@@ -5,10 +5,8 @@ import "draftail/dist/draftail.css"
 import ReactDOM from "react-dom"
 import { DraftailEditor, BLOCK_TYPE, INLINE_STYLE } from "draftail"
 import { ENTITY_TYPE } from 'draftail';
-const initial = JSON.parse(sessionStorage.getItem("draftail:content"))
-const onSave = (content) => {
-    console.log("saving", content)
-    sessionStorage.setItem("draftail:content", JSON.stringify(content))
+const onSave = () => {
+    console.log("saving")
 }
 let id = ''
 
@@ -16,7 +14,7 @@ const TextEditor = () => {
     return (
         <DraftailEditor
 
-            rawContentState={initial || null}
+            rawContentState={null}
             onSave={onSave}
             blockTypes={[
                 { type: BLOCK_TYPE.ORDERED_LIST_ITEM},
